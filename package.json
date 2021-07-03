@@ -38,6 +38,7 @@
     },
     "dependencies": {
         "@amoutonbrady/solid-heroicons": "^0.8.0",
+        "solid-app-router": "^0.0.50",
         "solid-js": "^1.0.0"
     },
     "husky": {
