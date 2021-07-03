@@ -2484,6 +2484,11 @@ solid-js@^1.0.0:
   resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.0.0.tgz#4bbc3f3932c604e2bfcd35d5a7f20408d208288e"
   integrity sha512-5huTDVyMqZSjg5Sa4mwl15feK4il1cE68n4weL5NYGC8lX2wiDlcHhBdSB8trKgaJ50Q9/pwtLrQngFaDC+5Tw==
 
+solid-meta@^0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/solid-meta/-/solid-meta-0.27.0.tgz#4b128360572a2469761690383831413d70f68917"
+  integrity sha512-DudhektuDc35HgLznHLKD1s5CFGLqT65LXvJyHGarrKZN2CV57qatlwIvhG4R0Pc8sUx+8W9Cn056bFrF4v5qg==
+
 solid-refresh@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/solid-refresh/-/solid-refresh-0.2.1.tgz#3b402e5980832cbe42ec09ecc8ce316c529f92ae"
