@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "module": "ESNext",
+        "target": "ESNext",
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js",
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": ["es6", "dom"],
+        "moduleResolution": "node",
+        "types": ["vite/client"],
+        "paths": {
+            "~/*": ["./src/*"]
+        }
+    },
+    "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.tsx"]
+}
