@@ -1,3 +1,14 @@
+# Solid Starter Kit
+
+Boilerplate to quckly get up and running with [Solid](https://solidjs.com), with
+
+- __Typescript__ as the language choice
+- __Tailwind CSS__ for quick styling without getting out of your HTML
+- __ESLint__ for static code analysis (with all the essential plug-ins)
+- __Prettier__ for code formatting
+- __SEO__ pre-configured
+- __Icon library__ ([Hero Icons](https://heroicons.com/)) and __custom fonts__([Work Sans](https://fonts.google.com/specimen/Work+Sans)) available out of the box
+
 ## Usage
 
 ```bash
