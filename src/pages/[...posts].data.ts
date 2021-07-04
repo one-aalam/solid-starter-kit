@@ -1,11 +1,14 @@
 import { DataFn } from 'solid-app-router';
 import { PostListDataProps } from '~/types';
-import { POSTS } from '~/data/posts';
+import { usePosts } from '~/lib/api';
 
 const PostsData: DataFn<PostListDataProps> = (props) => {
-  return {
-    posts: POSTS
-  };
+    const posts = usePosts();
+    return {
+        get posts() {
+            return posts();
+        }
+    };
 }
 
 export default PostsData;

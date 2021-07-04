@@ -1,10 +1,14 @@
 import { DataFn } from 'solid-app-router';
 import { PostDataProps } from '~/types'
-import { POSTS } from '~/data/posts';
-
+import { usePost } from '~/lib/api';
 
 const PostData: DataFn<PostDataProps> = (props) => {
-  return POSTS.find(post => post.id == props.params.id);
+    const post = usePost(props.params.id);
+    return {
+        get post() {
+            return post();
+        }
+    };
 }
 
 export default PostData;
