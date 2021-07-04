@@ -2499,6 +2499,11 @@ solid-refresh@^0.2.1:
   resolved "https://registry.yarnpkg.com/solid-refresh/-/solid-refresh-0.2.1.tgz#3b402e5980832cbe42ec09ecc8ce316c529f92ae"
   integrity sha512-8iqVw+FxDUj5CQnadAD+D5bLlzA/yBhMx2rHECGN2e3IQGtBArNdBUHduPBPpqfnufvnP2IwszLhgcg/IdABQQ==
 
+solid-transition-group@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/solid-transition-group/-/solid-transition-group-0.0.8.tgz#56c0eb7fd7079ecc945f3d52b5376184e3985d45"
+  integrity sha512-5cS/Ircfs/Y0J00oEToL+MWd9V07KgQlw+qRD8kpd6azb2Ri5SjXg/ocqT8U8Wgdx1VQPx45HyopQN+UumkVGQ==
+
 source-map-js@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-0.6.2.tgz#0bb5de631b41cfbda6cfba8bd05a80efdfd2385e"
