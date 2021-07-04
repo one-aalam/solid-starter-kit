@@ -7,7 +7,10 @@ Boilerplate to quckly get up and running with [Solid](https://solidjs.com), with
 - __ESLint__ for static code analysis (with all the essential plug-ins)
 - __Prettier__ for code formatting
 - __SEO__ pre-configured
-- __Icon library__ ([Hero Icons](https://heroicons.com/)) and __custom fonts__([Work Sans](https://fonts.google.com/specimen/Work+Sans)) available out of the box
+- __Icon library__ ([Hero Icons](https://heroicons.com/)) and __custom fonts__([Work Sans](https://fonts.google.com/specimen/Work+Sans))
+
+available out of the box, with pre-made
+- __Alerts__ `coz who don't uses one?
 
 ## Usage
 
