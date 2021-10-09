@@ -42,3 +42,28 @@ Your app is ready to be deployed!
 ## Deployment
 
 You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+
+
+
+mkdir amplify-infra
+WKMZTD77ACA3:solid-shot aftalam$ cd amplify-infra/
+WKMZTD77ACA3:amplify-infra aftalam$ cdk init --language typescript
+Applying project template app for typescript
+# Welcome to your CDK TypeScript project!
+
+This is a blank project for TypeScript development with CDK.
+
+The `cdk.json` file tells the CDK Toolkit how to execute your app.
+
+## Useful commands
+
+ * `npm run build`   compile typescript to js
+ * `npm run watch`   watch for changes and compile
+ * `npm run test`    perform the jest unit tests
+ * `cdk deploy`      deploy this stack to your default AWS account/region
+ * `cdk diff`        compare deployed stack with current state
+ * `cdk synth`       emits the synthesized CloudFormation template
+
+
+ https://github.com/settings/tokens
+ https://github.com/settings/tokens/new

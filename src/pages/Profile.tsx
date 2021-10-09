@@ -14,7 +14,6 @@ const Profile: Component = () => (
             Profile
         </h1>
         <hr class="mt-1 mb-4 text-blue-300"/>
-        <p>This section could be about you.</p>
     </PrivateLayout>
 );
 

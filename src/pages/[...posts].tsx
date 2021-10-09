@@ -14,7 +14,6 @@ const Posts: Component<PostListDataProps> = (props) => (
         </h1>
         <hr class="mt-1 mb-4 text-blue-300"/>
         <p>Click the links in the Navigation above to load different routes.</p>
-        {/* <p>{props?.title}</p> */}
         <For each={props?.posts}>{(post) => <div><Link href={`/posts/${post?.id}`} title={post?.title}>{post?.title}</Link></div>}</For>
     </section>
 );
