@@ -15,6 +15,10 @@ export const routes: RouteDefinition[] = [
     component: lazy(() => import('~/pages/Profile')),
   },
   {
+    path: "/auth",
+    component: lazy(() => import('~/pages/Auth')),
+  },
+  {
     path: "/settings",
     component: lazy(() => import('~/pages/Settings')),
   },
