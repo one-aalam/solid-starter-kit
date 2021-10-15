@@ -12,7 +12,10 @@
         "forceConsistentCasingInFileNames": true,
         "lib": ["es6", "dom"],
         "moduleResolution": "node",
-        "types": ["vite/client"],
+        "types": [
+            "vite/client",
+            "unplugin-icons/types/solid"
+        ],
         "baseUrl": ".",
         "paths": {
             "~/*": ["./src/*"]

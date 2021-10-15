@@ -1,7 +1,7 @@
 import { Component } from 'solid-js';
 import { Title } from 'solid-meta';
-import { cog } from '@amoutonbrady/solid-heroicons/solid';
-import { Icon } from '@amoutonbrady/solid-heroicons';
+import IconCog from '~icons/heroicons-solid/cog'
+
 import PrivateLayout from '~/layouts/Private';
 
 
@@ -9,7 +9,7 @@ const Settings: Component = () => (
     <PrivateLayout>
         <Title>Settings</Title>
         <h1 class="text-4xl font-semibold text-blue-900">
-            <Icon class="w-10 h-10 inline-block text-blue-900" path={cog} />
+            <IconCog class="w-10 h-10 inline-block text-blue-900" />
             Settings
         </h1>
         <hr class="mt-1 mb-4 text-blue-300"/>
