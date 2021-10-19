@@ -1,5 +1,6 @@
 import { Component, createSignal, createEffect, Show } from 'solid-js';
 import { createStore } from 'solid-js/store';
+import { useRouter } from 'solid-app-router'
 import { Title } from 'solid-meta'
 import { UserCredentials } from '@supabase/supabase-js'
 import DefaultLayout from '~/layouts/Default';
@@ -13,9 +14,11 @@ const Auth: Component = () => {
     // local state - atoms
     const [ isLogIn, setIsLogIn ] = createSignal<boolean>(true)
     const [ loading, setLoading ] = createSignal<boolean>(false)
+    const [ _, routerAction ] = useRouter()
     const [ currActionLabel, setCurrActionLabel ] = createSignal<AuthActionLabel>('Sign In')
     // local form state
     const [fields, setFields] = createStore<UserCredentials>({email: '', password: ''});
+
 
     // local computed state. not absolutely needed, but the value is used more than once, so let's compute it
     createEffect(() => { isLogIn() ? setCurrActionLabel('Sign In') : setCurrActionLabel('Sign Up')})
@@ -30,6 +33,7 @@ const Auth: Component = () => {
           }
           else {
               handleAlert({ type: 'success' , text: isLogIn() ? `Log in successful. I'll redirect you soon...` : `Signup successful. Please check your inbox for a confirmation email!` })
+              routerAction.push('/profile')
           }
         } catch (error) {
             handleAlert({ text: error.error_description || error, type: 'error' })

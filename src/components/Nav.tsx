@@ -1,12 +1,23 @@
 import { Component } from 'solid-js';
 import { Link, useRouter } from 'solid-app-router';
+import { User } from '@supabase/supabase-js'
+import { auth } from '~/lib/supabase'
 import IconHome from '~icons/heroicons-solid/home'
 import IconUser from '~icons/heroicons-solid/user'
 import IconCog from '~icons/heroicons-solid/cog'
 
+type NavProps = {
+    user?: User
+}
 
-const Nav: Component = () => {
-    const [router] = useRouter();
+
+const Nav: Component<NavProps> = ({ user }) => {
+    const [ router, routerAction ] = useRouter();
+
+    const signOut = async () => {
+        await auth.signOut()
+        routerAction.replace('/auth')
+    }
 
     return (
         <nav class="w-full py-3 bg-blue-50 shadow-md flex justify-center">
@@ -28,6 +39,9 @@ const Nav: Component = () => {
                     <IconCog class="w-8 h-8 inline-block text-blue-500" />
                         Settings
                     </Link>
+                </li>
+                <li>
+                    {user && user.email} <button onClick={signOut}>Sign Out</button>
                 </li>
             </ul>
         </nav>
