@@ -35,8 +35,12 @@ export const AuthProvider: Component = (props) => {
                         handleAlert({ type: 'error' , text: error.message})
                     }
                     else {
-                        handleAlert({ type: 'success' , text: isSignIn ? `Log in successful. I'll redirect you soon...` : `Signup successful. Please check your inbox for a confirmation email!` })
-                        replace('/profile')
+                        if(payload.password?.length) {
+                            handleAlert({ type: 'success' , text: isSignIn ? `Log in successful. I'll redirect you soon...` : `Signup successful. Please check your inbox for a confirmation email!` })
+                            replace('/profile')
+                        } else {
+                            handleAlert({ type: 'success', text: `Please check your email for the magic link`})
+                        }
                     }
                 } catch (error) {
                     handleAlert({ text: error.error_description || error, type: 'error' })

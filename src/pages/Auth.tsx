@@ -59,7 +59,7 @@ const Auth: Component = () => {
                                 <label class="label">
                                     <span class="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" class="input input-bordered" required placeholder="password"  onInput={handleChange} />
+                                <input type="password" name="password" class="input input-bordered" placeholder="Your password. Leave empty for password-less login"  onInput={handleChange} />
                                 <label class="label h-8">
                                     <Show when={isLogIn()}>
                                         <a href="#" class="label-text-alt">Forgot password?</a>
