@@ -18,7 +18,7 @@ const AuthContext = createContext<AuthStore>([{ user: null, loading() { return f
 export const AuthProvider: Component = (props) => {
     const [ loading, setLoading ] = createSignal<boolean>(false)
     const [ state, setState ] = createStore({ user: auth.user() || null, loading })
-    const [, { replace } ] = useRouter()
+    const [{ location }, { replace } ] = useRouter()
     const store: AuthStore = [
         state,
         {
@@ -55,6 +55,9 @@ export const AuthProvider: Component = (props) => {
             async (event, session) => {
               const user = session?.user! ?? null
               setState({ user })
+              if(user && location === '/') {
+                replace('/profile')
+              }
             }
         )
     })

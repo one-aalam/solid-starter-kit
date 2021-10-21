@@ -5,6 +5,7 @@ import { UserCredentials } from '@supabase/supabase-js'
 import DefaultLayout from '~/layouts/Default';
 import Spinner from '~/components/Spinner'
 import { useAuth } from '~/lib/auth'
+import { auth } from '~/lib/supabase';
 
 type AuthActionLabel = 'Sign In' | 'Sign Up'
 
@@ -39,6 +40,14 @@ const Auth: Component = () => {
             <div className="h-full flex flex-col justify-center items-center">
                 <form class="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100" onSubmit={handleSubmit}>
                     <div class="card-body">
+                        <div className="form-controls">
+                            <div class="form-control mt-6">
+                                <button type="submit" class="btn bg-white text-green-800 border-primary hover:bg-green-800 hover:text-white" onClick={(e) => { e.preventDefault(); auth.signIn({ provider: 'github'})}} disabled={loading()}>
+                                    {currActionLabel} with github
+                                </button>
+                            </div>
+                        </div>
+                        <hr class="my-4 text-purple-200"/>
                         <div className="form-controls">
                             <div class="form-control">
                                 <label class="label">
