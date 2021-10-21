@@ -1,50 +1,27 @@
 import { Component, createSignal, createEffect, Show } from 'solid-js';
 import { createStore } from 'solid-js/store';
-import { useRouter } from 'solid-app-router'
 import { Title } from 'solid-meta'
 import { UserCredentials } from '@supabase/supabase-js'
 import DefaultLayout from '~/layouts/Default';
 import Spinner from '~/components/Spinner'
-import { auth } from '~/lib/supabase'
-import { handleAlert } from '~/lib/alert'
+import { useAuth } from '~/lib/auth'
 
 type AuthActionLabel = 'Sign In' | 'Sign Up'
 
 const Auth: Component = () => {
     // local state - atoms
     const [ isLogIn, setIsLogIn ] = createSignal<boolean>(true)
-    const [ loading, setLoading ] = createSignal<boolean>(false)
-    const [ _, routerAction ] = useRouter()
+    const [{ loading }, { signInOrSignUp }] = useAuth()
     const [ currActionLabel, setCurrActionLabel ] = createSignal<AuthActionLabel>('Sign In')
     // local form state
     const [fields, setFields] = createStore<UserCredentials>({email: '', password: ''});
 
-
     // local computed state. not absolutely needed, but the value is used more than once, so let's compute it
     createEffect(() => { isLogIn() ? setCurrActionLabel('Sign In') : setCurrActionLabel('Sign Up')})
 
-    // Supabase - Auth method
-    const signInOrSignUp = async (payload: UserCredentials) => {
-        try {
-          setLoading(true)
-          const { error } = isLogIn() ? await auth.signIn(payload) : await auth.signUp(payload)
-          if (error) {
-            handleAlert({ type: 'error' , text: error.message})
-          }
-          else {
-              handleAlert({ type: 'success' , text: isLogIn() ? `Log in successful. I'll redirect you soon...` : `Signup successful. Please check your inbox for a confirmation email!` })
-              routerAction.push('/profile')
-          }
-        } catch (error) {
-            handleAlert({ text: error.error_description || error, type: 'error' })
-        } finally {
-          setLoading(false)
-        }
-    }
-
     // local callbacks invoked through DOM interactions
     const handleSubmit = (e) => {
-        signInOrSignUp(fields)
+        signInOrSignUp(fields, isLogIn())
         e.preventDefault()
     };
     const handleChange = (e) => setFields(e.currentTarget.name, e.currentTarget.value)
