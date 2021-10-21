@@ -1,7 +1,7 @@
-import { Component, createEffect, createContext, useContext, createSignal, Accessor } from 'solid-js'
+import { Component, createEffect, createContext, useContext, createSignal, Accessor, onMount, onCleanup } from 'solid-js'
 import { createStore } from 'solid-js/store'
 import { useRouter } from 'solid-app-router'
-import { User, UserCredentials } from '@supabase/supabase-js'
+import { User, UserCredentials, Subscription } from '@supabase/supabase-js'
 import { auth } from '~/lib/supabase'
 import { handleAlert } from '~/lib/alert'
 
@@ -17,7 +17,7 @@ const AuthContext = createContext<AuthStore>([{ user: null, loading() { return f
 
 export const AuthProvider: Component = (props) => {
     const [ loading, setLoading ] = createSignal<boolean>(false)
-    const [ state ] = createStore({ user: auth.user() || null, loading })
+    const [ state, setState ] = createStore({ user: auth.user() || null, loading })
     const [, { replace } ] = useRouter()
     const store: AuthStore = [
         state,
@@ -46,8 +46,21 @@ export const AuthProvider: Component = (props) => {
             }
         }
     ];
+    let authStateSubscription: { data: Subscription } = null
 
     createEffect(() => { !state.user && replace('/auth')})
+
+    onMount(() => {
+        authStateSubscription = auth.onAuthStateChange(
+            async (event, session) => {
+              const user = session?.user! ?? null
+              setState({ user })
+            }
+        )
+    })
+    onCleanup(() => {
+        authStateSubscription.data.unsubscribe()
+    })
 
     return (
         <AuthContext.Provider value={store}>
