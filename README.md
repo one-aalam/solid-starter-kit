@@ -1,16 +1,24 @@
 # Solid Starter Kit
-
-Boilerplate to quckly get up and running with [Solid](https://solidjs.com), with
-
+_Solid Starter Kit_ is an opinionated boilerplate based off of [SolidJS](https://www.solidjs.com), with all the bells and whistles you want ready, up and running when starting a SolidJS project. Out of the box you get all the `essentials`
 - __Typescript__ as the language choice
 - __Tailwind CSS__ for quick styling without getting out of your HTML
-- __ESLint__ for static code analysis (with all the essential plug-ins)
-- __Prettier__ for code formatting
+- __Daisy UI__ for pre-made TailwindCSS component classes
+- __FontSource__ for effortless custom font integration
+- __Icons through Unplugin__ for thousands of icons as components that are available on-demand and universally
+- __ESLint__ and __Prettier__ for static code analysis and code formatting
 - __SEO__ pre-configured
-- __Icon library__ ([Hero Icons](https://heroicons.com/)) and __custom fonts__([Work Sans](https://fonts.google.com/specimen/Work+Sans))
 
-available out of the box, with pre-made
-- __Alerts__ `coz who don't uses one?
+with [Supabase](https://supabase.io/) as the 3rd Party Persistence Layer for
+- __Authentication System__ with Supabase GoTrue
+- __User Profiles__ available on `/profile` as an example for Supabase PostgREST (CRUD API)
+- __User Avatar__ which is Supbase Storage(AWS S3 backed effortless uploads) supported
+in the [main](https://github.com/one-aalam/solid-starter-kit/) branch
+
+and a bunch of pre-made, hand-rolled(easily replace-able) components, that you almost always end up installing/using for any non-trivial project
+- __Alert/Toast__ to notify your users of the outcome of an event - `success, `error` or `default` is supported
+- __Loaders__ for reporting the progress of an API call + a page load
+
+__Note__: Refer the [main](https://github.com/one-aalam/solid-starter-kit/) branch for a starter structure with all the Supabase goodies integrated
 
 ## Usage
 
