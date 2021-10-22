@@ -18,7 +18,7 @@ and a bunch of pre-made, hand-rolled(easily replace-able) components, that you a
 - __Modal__(WIP) as you always come back to `em
 - __Loaders__ for reporting the progress of an API call + a page load
 
-__Note__: Refer the [main](https://github.com/one-aalam/solid-starter-kit) branch for a bare minimum starter structure with all the `essentials`
+__Note__: Refer the [basic](https://github.com/one-aalam/solid-starter-kit/tree/basic) branch for a bare minimum starter structure with all the `essentials`
 
 ## How to Setup?
 If new to Supabase
