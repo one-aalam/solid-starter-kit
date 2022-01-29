@@ -53,7 +53,7 @@ const Auth: Component = () => {
                                 <label class="label">
                                     <span class="label-text">Email</span>
                                 </label>
-                                <input type="text" name="email" class="input input-bordered" required placeholder="email" onInput={handleChange} />
+                                <input type="text" name="email" autocomplete="off" class="input input-bordered" required placeholder="email" onInput={handleChange} />
                             </div>
                             <div class="form-control">
                                 <label class="label">
